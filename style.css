@@ -8,9 +8,16 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.2rem;
+  line-height: 1.5;
   background: #222;
   color: #fff;
-  overflow: auto;
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  padding: 1rem 0;
 }
 
 h1 {
@@ -18,17 +25,11 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h3 {
   font-size: 1.4rem;
-}
-
-h1,
-h2,
-h3 {
-  padding: 2rem 0;
 }
 
 a {
@@ -80,13 +81,31 @@ li {
 }
 
 #main-nav ul li {
-  padding: 0.7rem;
-  margin: 0 1rem;
+  padding: 0.4rem;
+  margin: 0.4rem;
 }
 
 #main-nav ul li:hover {
   text-decoration: underline;
   color: red;
+  transition: 0.4s ease;
+}
+
+.anchor {
+  padding-top: 60px;
+}
+
+/* Social media links */
+#links {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+#links a:hover {
+  color: #aaa;
   transition: 0.4s ease;
 }
 
@@ -122,176 +141,147 @@ li {
   margin-bottom: 2rem;
 }
 
-/* About section */
+/* About Section */
 #about {
-  display: grid;
-  margin: 2rem 2rem 1rem;
-  padding-top: 4.5rem;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: top;
-  grid-template-areas:
-    'info video'
-    'info video'
-    'members members'
-    'quote quote';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #about #about-info {
-  grid-area: info;
+  width: 90%;
 }
 
 #about #video {
-  grid-area: video;
-  padding: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+#about #video iframe {
+  width: 100%;
 }
 
 #about #band-members {
-  grid-area: members;
-  padding: 1rem;
-  justify-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#about #band-members img {
+  width: 100%;
 }
 
 #about #quote {
-  grid-area: quote;
-  justify-self: center;
   text-align: center;
-  padding: 1rem;
 }
 
-/* Social media links */
-#links {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  opacity: 0.8;
-}
-
-#links a:hover {
-  color: #aaa;
-  transition: 0.4s ease;
-}
-
-/* Google calendar */
+/* Schedule section */
 #schedule {
-  padding-top: 4.5rem;
-  margin: 2rem;
-  text-align: center;
-}
-
-#schedule iframe {
-  border: solid 1px #777;
-  width: 800px;
-  height: 600px;
-}
-
-/* Contact info */
-#contact {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
-  font-size: 2rem;
-}
-#contact a {
-  margin: 1rem;
+  text-align: center;
+  width: 100%;
 }
 
-#contact a:hover {
-  color: #aaa;
-  transition: 0.4s ease;
+#schedule #calendar {
+  width: 100%;
+  height: 400px;
+}
+
+#schedule #calendar iframe {
+  height: 100%;
+}
+
+#schedule #contact {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  margin: 3rem;
+  padding: 1rem;
+  background: #f4f4f4;
+  color: #222;
+  border-radius: 5px;
+}
+
+#schedule #contact a {
+  margin-bottom: 1rem;
+  color: #222;
 }
 
 /* Footer */
 #main-footer {
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
   background-color: #111;
   color: #ccc;
-  padding: 0.3rem;
+  padding: 1rem;
 }
 
-@media (max-width: 1080px) {
+/* Media queries */
+
+@media (min-width: 1000px) {
   #about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: 3fr 4fr;
+    grid-template-areas:
+      'info video'
+      'quote video'
+      'band band';
   }
   #about #about-info {
-    width: 85%;
+    grid-area: info;
   }
-
-  #about #about-info h2 {
-    text-align: center;
-  }
-}
-
-@media (max-width: 900px) {
   #about #video {
-    padding-bottom: 0;
-    margin-bottom: 0;
+    grid-area: video;
+  }
+
+  #about #video iframe {
+    max-width: 600px;
   }
   #about #band-members {
-    padding: 0;
+    grid-area: band;
   }
-  #band-members img {
-    transform: scale(0.75);
+  #about #band-members img {
+    max-width: 800px;
+    border-radius: 5px;
   }
-  #band-members #quote {
+  #about #quote {
+    grid-area: quote;
+    text-align: left;
     margin: 0;
     padding: 0;
   }
-  /* ADD GOOGLE MAPS RESIZE */
-}
-#schedule iframe {
-  width: 600px;
-  height: 450px;
+  #schedule {
+    display: grid;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      'heading contact'
+      'calendar contact';
+  }
+  #schedule h2 {
+    grid-area: heading;
+  }
+  #schedule #calendar {
+    grid-area: calendar;
+    height: 500px;
+  }
+  #schedule #calendar iframe {
+    width: 80%;
+  }
+  #schedule #contact {
+    grid-area: contact;
+  }
 }
 
-@media (max-width: 680px) {
-  #video {
-    transform: scale(0.75);
-  }
-  #band-members img {
-    display: none;
-  }
-  #schedule iframe {
-    width: 400px;
-    height: 300px;
-    margin: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    background: yellow;
-  }
-  #logo {
-    display: none;
-  }
-  #main-nav {
-    text-align: center;
-  }
-  #main-nav ul li {
-    padding: 0.2rem;
-    margin: 0 0.3rem;
-  }
-  #about #about-info {
-    width: 90%;
-  }
-  #video {
-    transform: scale(0.55);
-  }
-  #schedule iframe {
-    width: 320px;
-    height: 240px;
-    margin: auto;
-  }
-  #contact {
-    font-size: 1.3rem;
+@media (min-width: 1200px) {
+  #about {
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem;
   }
 }
