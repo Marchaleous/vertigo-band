@@ -16,105 +16,181 @@
       src="https://kit.fontawesome.com/818fa844e3.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Vertigo Band</title>
   </head>
-  <body>
-    <!-- nav bar -->
-    <nav>
-      <nav id="main-nav">
-        <a href="#home"><img src="./img/icon.png" alt="Logo" id="logo" /></a>
-        <ul class="list-inline">
-          <li class="">
-            <a href="#home" class="nav-link">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link">About</a>
-          </li>
-          <li>
-            <a href="#schedule" class="nav-link">Schedule</a>
-          </li>
-        </ul>
-      </nav>
+  <body class="bg-dark text-light white-link">
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark bg-darker"
+    >
+      <a class="navbar-brand" href="#">Vertigo Music</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link text-light" href="#">Home</a>
+          <a class="nav-item nav-link text-light" id="aboutLink" href="#about"
+            >About</a
+          >
+          <a class="nav-item nav-link text-light" href="#schedule">Schedule</a>
+          <a
+            class="nav-item nav-link text-light"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+            >Contact</a
+          >
+        </div>
+      </div>
     </nav>
 
+    <!-- Contact modal -->
+    <div
+      class="modal fade text-dark"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Contact Us!</h5>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-unstyled">
+              <li>
+                <a href="tel:281-250-0440"
+                  ><i class="fas fa-phone-square-alt"></i> (281) 250-0440</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:vertigoinfo@yahoo.com?subject=MESSAGE FROM VERTIGO MUSIC DOT NET"
+                  ><i class="fas fa-envelope-square"></i>
+                  vertigoinfo@yahoo.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing -->
+    <header class="masthead mb-3">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="display-3">VERTIGO</h1>
+            <p class="lead">
+              Eighties Pop & Rock Dance Band<br />...and Much More!
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+
+    <div class="container" id="about">
+      <div class="row mt-4">
+        <div class="col-lg-6">
+          <h2 class="mb-4">About Vertigo</h2>
+          <p class="lead mb-4">
+            Vertigo was formed in early 2006 by Nik Rincon with other members of
+            his previous bands. The motto behind the band was to rock out the
+            audiences of Texas to tunes that have caused major radio impact and
+            live in the memories of many of us and are signature songs of the
+            artist Vertigo covers. Vertigo's repertoire focuses on 80's power
+            dance rock with a twist of modern pop, alternative rock and current
+            rock hits delivered with energy and captivating emotion.
+          </p>
+        </div>
+
+        <!-- Youtube video -->
+        <div class="col-lg-6 text-center mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/qLfTQIZfozo"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Band members -->
+      <div class="container text-center mb-3">
+        <img src="./img/band-group1.jpg" alt="" class="img-fluid rounded" />
+        <blockquote class="blockquote mt-2">
+          <em>We hope to see you at one of our shows in the near future!</em>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Google calendar -->
+    <div class="container my-4 text-center" id="schedule">
+      <h2>Our Schedule</h2>
+      <div class="embed-responsive embed-responsive-1by1 google-calendar">
+        <iframe
+          src="https://www.google.com/calendar/embed?showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23999999&amp;src=nickrincon%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago"
+          class="embed-responsive-item mx-auto"
+        ></iframe>
+      </div>
+    </div>
+
     <!-- Social media links -->
-    <section id="links">
+    <div class="container-fluid fixed-bottom text-white text-right mb-2">
       <a
         href="http://www.facebook.com/pages/Vertigo/100314143063"
         target="_blank"
-        ><i class="fab fa-facebook-square fa-2x"></i
+        ><i class="fab fa-facebook-square fa-2x text-white"></i
       ></a>
       <a href="https://twitter.com/#!/nikrincon" target="_blank"
-        ><i class="fab fa-twitter-square fa-2x"></i
+        ><i class="fab fa-twitter-square fa-2x text-white"></i
       ></a>
-    </section>
+    </div>
 
-    <!-- welcome section -->
-    <section id="home" class="anchor">
-      <h1>VERTIGO</h1>
-      <p>Eighties Pop & Rock Dance Band<br />...and Much More!</p>
-      <a href="#contact" class="btn">Book a Show</a>
-    </section>
-
-    <!-- about -->
-    <section id="about" class="anchor">
-      <div id="about-info">
-        <h2>About Vertigo</h2>
-        <p>
-          Vertigo was formed in early 2006 by Nik Rincon with other members of
-          his previous bands. The motto behind the band was to rock out the
-          audiences of Texas to tunes that have caused major radio impact and
-          live in the memories of many of us and are signature songs of the
-          artist Vertigo covers. Vertigo's repertoire focuses on 80's power
-          dance rock with a twist of modern pop, alternative rock and current
-          rock hits delivered with energy and captivating emotion.
-        </p>
-      </div>
-
-      <!-- youtube video -->
-      <!-- needs to be adjusted to size with window -->
-      <div id="video">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/qLfTQIZfozo"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div id="band-members">
-        <img src="./img/band-group1.jpg" alt="" />
-      </div>
-      <p id="quote">
-        We hope to see you at one of our shows in the near future!
-      </p>
-    </section>
-
-    <!-- Schedule section -->
-    <section id="schedule" class="anchor">
-      <h2>Come See Us!</h2>
-      <!-- google calendar -->
-      <div id="calendar">
-        <iframe
-          src="https://www.google.com/calendar/embed?showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23999999&amp;src=nickrincon%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago"
-        ></iframe>
-      </div>
-      <!-- Contact info -->
-      <div id="contact">
-        <h2>Book a Show!</h2>
-        <a href="tel:281-250-0440"
-          ><i class="fas fa-phone-square-alt"></i> (281) 250-0440</a
-        >
-        <a
-          href="mailto:vertigoinfo@yahoo.com?subject=MESSAGE FROM VERTIGO MUSIC DOT NET"
-          ><i class="fas fa-envelope-square"></i> vertigoinfo@yahoo.com</a
-        >
-      </div>
-    </section>
     <!-- Footer -->
-    <footer id="main-footer">
-      Marchaleous Web Design | &copy; Copyright 2020
+    <footer class="page-footer font-small pt-4">
+      <!-- Footer Links -->
+      <div class="footer-copyright text-center py-3">Vertigo Music &copy;</div>
     </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
   </body>
 </html>
