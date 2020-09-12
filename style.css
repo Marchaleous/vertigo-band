@@ -14,15 +14,10 @@ body {
   background: #222 !important;
 }
 
-#schedule {
-  margin-top: 10vh;
-}
-
 .google-calendar {
   max-height: 70vh;
   min-height: 400px;
   max-width: 90vw;
-  margin-bottom: 10vh;
 }
 
 .bg-img-2 {

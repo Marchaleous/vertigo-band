@@ -1,7 +1,14 @@
-const aboutLink = document.getElementById('aboutLink');
+// Closes hamburger menu automatically after clicking link
+$('.navbar-collapse a:not(.dropdown-toggle)').click(function () {
+  $('.navbar-collapse').collapse('hide');
+});
 
-const shiftWindow = function () {
-  scrollBy(0, -60);
+// Scrolls up so nav doesn't cover title
+const shiftWindow = () => {
+  if (location.hash === '#about') {
+    scrollBy(0, -60);
+  }
 };
-if (location.hash) shiftWindow();
+
+// Listens for click
 window.addEventListener('hashchange', shiftWindow);
